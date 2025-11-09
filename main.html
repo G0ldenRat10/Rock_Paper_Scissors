@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Rock Paper Scissors!</title>
+        <style>
+            body {
+                background-color: rgb(25,25,25);
+                color: white;
+                font-family: Arial,;
+            }
+            .title {
+                color: white;
+                font-size: 30px;
+                font-weight: bold;
+            }
+            .rps-images {
+                height: 50px;
+                background-color: transparent;
+                border: 1px solid dotted;
+                width: 120px;
+                height: 120px;
+                border-radius: 60px;
+                margin-right: 10px;
+                cursor: pointer;
+            }
+            .js-gameinfo {
+                font-size: 25px;
+                font-weight: bold;
+                margin-top: 50px;
+            }
+            .js-scoreboard {
+                color: white;
+                font-size: 30px;
+                font-weight: bold;
+            }
+            .js-reset {
+                color: black;
+                font-size: 30px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            .js-game-status {
+                color: white;
+                font-size: 30px;
+                font-weight: bold;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <p class="title">
+            Rock Paper Scissors!
+        </p>
+
+        <button title="Rock" onclick="
+
+            const playerChoice = 'rock';
+            console.log(`Players choice: ${playerChoice}`);
+            const robotsChoice = pickComputerMove();
+            pickWinner(robotsChoice, playerChoice);
+   
+        "><img src="RPS_emojis/rock-emoji.png" class="rps-images"></button>
+
+        <button title="Paper" onclick="
+
+            const playerChoice = 'paper';
+            console.log(`Players choice: ${playerChoice}`);
+            const robotsChoice = pickComputerMove();
+            pickWinner(robotsChoice, playerChoice);
+   
+        "><img src="RPS_emojis/paper-emoji.png" class="rps-images"></button>
+
+        <button title="Scissors" onclick="
+
+            const playerChoice = 'scissors';
+            console.log(`Players choice: ${playerChoice}`);
+            const robotsChoice = pickComputerMove();
+            pickWinner(robotsChoice, playerChoice);
+   
+        "><img src="RPS_emojis/scissors-emoji.png" class="rps-images"></button>
+
+        <p class="js-game-status"></p>
+        <p class="js-gameinfo"></p>
+        <p class="js-scoreboard"></p>
+
+        <button title="Reset Score" onclick="
+            resetScoreBoard(scoreBoard)
+        " class="js-reset">Reset Score</button>
+
+        <script src="main.js"></script>
+    </body>
+</html>
