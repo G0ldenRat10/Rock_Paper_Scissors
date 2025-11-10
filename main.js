@@ -1,6 +1,7 @@
 let scoreBoard; // postavljanje varijable 
 setLocalStorage(); // funkcija pravi storage, ako postoji, ako ne preskace
 scoreBoard = JSON.parse(localStorage.getItem('scoreBoard'));
+let autoPlayInterval = null;
 
 function pickComputerMove() {
     const randomNumber = Math.random(); // Po default-u da je od 0-1
@@ -132,4 +133,49 @@ function pickEmoji(choice) {
         const handEmoji = '✌️';
         return handEmoji;
     }
+}
+
+function singleAutoPlay() {
+
+    randomDigit = Math.random();
+
+    if (randomDigit < 0.33) {
+        const playerChoice = 'rock';
+        console.log(`Players choice: ${playerChoice}`);
+        const robotsChoice = pickComputerMove();
+        pickWinner(robotsChoice, playerChoice);
+    } else if (randomDigit >= 0.33 && randomDigit < 0.66) {
+        const playerChoice = 'paper';
+        console.log(`Players choice: ${playerChoice}`);
+        const robotsChoice = pickComputerMove();
+        pickWinner(robotsChoice, playerChoice);
+    } else {
+        const playerChoice = 'scissors';
+        console.log(`Players choice: ${playerChoice}`);
+        const robotsChoice = pickComputerMove();
+        pickWinner(robotsChoice, playerChoice);
+    };
+}
+
+function startAutoPlay() {
+    autoPlayInterval = setInterval(singleAutoPlay, 3000); // Na svake 3 sekunde
+    console.log('Auto play started.');
+
+    document.getElementById('autoplay_button_container').innerHTML = `
+    <button title='Stop Auto Play' onclick='stopAutoPlay();' class='js-stop-auto-play'>
+        Stop Auto Play
+    </button>
+    `;
+}
+
+function stopAutoPlay() {
+    clearInterval(autoPlayInterval); // Zaustavlja pokrenuti interval
+    autoPlayInterval = null;
+    console.log('Auto play stopped.');
+
+    document.getElementById('autoplay_button_container').innerHTML = `
+    <button title="Auto Play" onclick="
+    startAutoPlay();
+    " class="js-autoplay">Auto Play</button>
+    `;
 }
