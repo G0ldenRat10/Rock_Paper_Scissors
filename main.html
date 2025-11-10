@@ -34,6 +34,7 @@
                 font-weight: bold;
             }
             .js-reset {
+                background-color: yellow;
                 color: black;
                 font-size: 30px;
                 font-weight: bold;
@@ -44,7 +45,22 @@
                 font-size: 30px;
                 font-weight: bold;
             }
-            
+            .js-autoplay {
+                background-color: green;
+                color: white;
+                font-size: 30px;
+                font-weight: bold;
+                cursor: pointer;
+                margin-top: 50px;
+            }
+            .js-stop-auto-play {
+                background-color: red;
+                color: white;
+                font-size: 30px;
+                font-weight: bold;
+                cursor: pointer;
+                margin-top: 50px;
+            }
         </style>
     </head>
     <body>
@@ -87,6 +103,13 @@
             resetScoreBoard(scoreBoard)
         " class="js-reset">Reset Score</button>
 
+        <div id="autoplay_button_container">
+            <button title="Auto Play" onclick="
+                startAutoPlay();
+            " class="js-autoplay">Auto Play</button>
+        </div>
+
         <script src="main.js"></script>
+
     </body>
 </html>
