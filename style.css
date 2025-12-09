@@ -1,0 +1,58 @@
+            body {
+                background-color: rgb(25,25,25);
+                color: white;
+                font-family: Arial,;
+            }
+            .title {
+                color: white;
+                font-size: 30px;
+                font-weight: bold;
+            }
+            .rps-images {
+                height: 50px;
+                background-color: transparent;
+                border: 1px solid dotted;
+                width: 120px;
+                height: 120px;
+                border-radius: 60px;
+                margin-right: 10px;
+                cursor: pointer;
+            }
+            .js-gameinfo {
+                font-size: 25px;
+                font-weight: bold;
+                margin-top: 50px;
+            }
+            .js-scoreboard {
+                color: white;
+                font-size: 30px;
+                font-weight: bold;
+            }
+            .js-reset {
+                background-color: yellow;
+                color: black;
+                font-size: 30px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            .js-game-status {
+                color: white;
+                font-size: 30px;
+                font-weight: bold;
+            }
+            .js-autoplay {
+                background-color: green;
+                color: white;
+                font-size: 30px;
+                font-weight: bold;
+                cursor: pointer;
+                margin-top: 50px;
+            }
+            .js-stop-auto-play {
+                background-color: red;
+                color: white;
+                font-size: 30px;
+                font-weight: bold;
+                cursor: pointer;
+                margin-top: 50px;
+            }
