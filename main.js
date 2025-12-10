@@ -162,7 +162,7 @@ function startAutoPlay() {
     console.log('Auto play started.');
 
     document.getElementById('autoplay_button_container').innerHTML = `
-    <button title='Stop Auto Play' onclick='stopAutoPlay();' class='js-stop-auto-play'>
+    <button title='Stop Auto Play' onclick='stopAutoPlay();' class='js-stop-auto-play' id="blue-neon">
         Stop Auto Play
     </button>
     `;
@@ -176,6 +176,7 @@ function stopAutoPlay() {
     document.getElementById('autoplay_button_container').innerHTML = `
     <button title="Auto Play" onclick="
     startAutoPlay();
-    " class="js-autoplay">Auto Play</button>
+    " class="js-autoplay" id="blue-neon" >Auto Play</button>
     `;
 }
+
