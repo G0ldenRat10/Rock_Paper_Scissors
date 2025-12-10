@@ -35,7 +35,7 @@ function pickWinner(robotsChoice, playerChoice) {
         document.querySelector('.js-gameinfo').innerHTML =
             `👤${humansEmoji} ${robotsEmoji}🤖`;
         document.querySelector('.js-scoreboard').innerHTML =
-            `Wins:${scoreBoard.wins}, Losses: ${scoreBoard.losses}, Ties: ${scoreBoard.ties}`;
+            `Wins: ${scoreBoard.wins}, Losses: ${scoreBoard.losses}, Ties: ${scoreBoard.ties}`;
 
     } else if (playerChoice === 'scissors' && robotsChoice === 'paper') {
         console.log('You win!');
@@ -44,7 +44,7 @@ function pickWinner(robotsChoice, playerChoice) {
         document.querySelector('.js-gameinfo').innerHTML =
             `👤${humansEmoji} ${robotsEmoji}🤖`;
         document.querySelector('.js-scoreboard').innerHTML =
-            `Wins:${scoreBoard.wins}, Losses: ${scoreBoard.losses}, Ties: ${scoreBoard.ties}`;
+            `Wins: ${scoreBoard.wins}, Losses: ${scoreBoard.losses}, Ties: ${scoreBoard.ties}`;
 
     } else if (playerChoice === 'paper' && robotsChoice === 'rock') {
         console.log('You win!');
@@ -53,7 +53,7 @@ function pickWinner(robotsChoice, playerChoice) {
         document.querySelector('.js-gameinfo').innerHTML =
             `👤${humansEmoji} ${robotsEmoji}🤖`;
         document.querySelector('.js-scoreboard').innerHTML =
-            `Wins:${scoreBoard.wins}, Losses: ${scoreBoard.losses}, Ties: ${scoreBoard.ties}`;
+            `Wins: ${scoreBoard.wins}, Losses: ${scoreBoard.losses}, Ties: ${scoreBoard.ties}`;
 
     } else if (playerChoice === 'rock' && robotsChoice === 'scissors') {
         console.log('You win!');
@@ -62,7 +62,7 @@ function pickWinner(robotsChoice, playerChoice) {
         document.querySelector('.js-gameinfo').innerHTML =
             `👤${humansEmoji} ${robotsEmoji}🤖`;
         document.querySelector('.js-scoreboard').innerHTML =
-            `Wins:${scoreBoard.wins}, Losses: ${scoreBoard.losses}, Ties: ${scoreBoard.ties}`;
+            `Wins: ${scoreBoard.wins}, Losses: ${scoreBoard.losses}, Ties: ${scoreBoard.ties}`;
 
     } else {
         console.log('You lose!');
@@ -71,7 +71,7 @@ function pickWinner(robotsChoice, playerChoice) {
         document.querySelector('.js-gameinfo').innerHTML =
             `👤${humansEmoji} ${robotsEmoji}🤖`;
         document.querySelector('.js-scoreboard').innerHTML =
-            `Wins:${scoreBoard.wins}, Losses: ${scoreBoard.losses}, Ties: ${scoreBoard.ties}`;
+            `Wins: ${scoreBoard.wins}, Losses: ${scoreBoard.losses}, Ties: ${scoreBoard.ties}`;
     }
 
     // Cuvanje podataka unutar localStorage:
@@ -179,4 +179,6 @@ function stopAutoPlay() {
     " class="js-autoplay" id="blue-neon" >Auto Play</button>
     `;
 }
+
+
 

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Rock Paper Scissors!</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/png" href="RPS_photos/rps_logo.png">
+    </head>
+    <body>
+        <nav class="main-menu">
+            <button class="home-page-button" onclick="window.location.href='main.html'">
+                <img src="RPS_photos/rps_logo.png" class="nav-logo" alt="Logo">
+            </button>
+            <ul>
+                <li><a href="index.html">Play against a friend!</a></li>
+                <li><a href="2player.html">Play against Mr Robot!</a></li>
+            </ul>
+        </nav>
+        <img class="logo" src="RPS_photos/mrrobot_rps.jpg" alt="Rock Paper Scissors!"></img>
+        <div class="rps-container">
+            <button title="Rock" onclick="
+
+                const playerChoice = 'rock';
+                console.log(`Players choice: ${playerChoice}`);
+                const robotsChoice = pickComputerMove();
+                pickWinner(robotsChoice, playerChoice);
+    
+            "><img src="RPS_emojis/rock-emoji.png" class="rps-images"></button>
+
+            <button title="Paper" onclick="
+
+                const playerChoice = 'paper';
+                console.log(`Players choice: ${playerChoice}`);
+                const robotsChoice = pickComputerMove();
+                pickWinner(robotsChoice, playerChoice);
+    
+            "><img src="RPS_emojis/paper-emoji.png" class="rps-images"></button>
+
+            <button title="Scissors" onclick="
+
+                const playerChoice = 'scissors';
+                console.log(`Players choice: ${playerChoice}`);
+                const robotsChoice = pickComputerMove();
+                pickWinner(robotsChoice, playerChoice);
+    
+            "><img src="RPS_emojis/scissors-emoji.png" class="rps-images"></button>
+        </div>
+        <p class="js-game-status"></p>
+        <p class="js-gameinfo"></p>
+        <p class="js-scoreboard"></p>
+
+        <button title="Reset Score" onclick="
+            resetScoreBoard(scoreBoard)
+        " class="js-reset" id="blue-neon">Reset Score</button>
+
+        <div id="autoplay_button_container">
+            <button title="Auto Play" onclick="
+                startAutoPlay();
+            " class="js-autoplay" id="blue-neon">Auto Play</button>
+        </div>
+
+        <script src="main.js"></script>
+
+    </body>
+</html>
