@@ -1,3 +1,5 @@
+// Postavljanje
+
 let scoreBoard; // postavljanje varijable 
 setLocalStorage(); // funkcija pravi storage, ako postoji, ako ne preskace
 scoreBoard = JSON.parse(localStorage.getItem('scoreBoard'));
@@ -23,6 +25,8 @@ function pickComputerMove() {
         return robotsChoice;
     }
 }
+
+// Funkcije za vsRobot.html
 
 function pickWinner(robotsChoice, playerChoice) {
     const humansEmoji = pickEmoji(playerChoice);
@@ -180,5 +184,6 @@ function stopAutoPlay() {
     `;
 }
 
+// Funkcije za vsFriend.html
 
 
