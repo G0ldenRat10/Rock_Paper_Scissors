@@ -3,9 +3,41 @@
 <head>
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="RPS_photos/rps_logo.png">
 </head>
 <body>
+    <nav class="main-menu">
+        <button class="home-page-button" onclick="window.location.href='main.html'">
+            <img src="RPS_photos/rps_logo.png" class="nav-logo" alt="Logo">
+        </button>
+        <ul>
+            <li><a href="vsFriend.html">Play against a friend!</a></li>
+            <li><a href="vsRobot.html">Play against Mr Robot!</a></li>
+        </ul>
+    </nav>
+
+    <img class="logo" src="RPS_photos/rps_logo.png" alt="Rock Paper Scissors!">
     
+    <!-- Scoreboard -->
+    <p class="js-scoreboard">Player 1: 0 | Player 2: 0</p>
+    <p class="js-game-status"></p>
+    <p class="js-gameinfo"></p>
+    
+    <!-- Game buttons -->
+    <div class="rps-container">
+        <button title="Rock" onclick="handleChoice('rock')">
+            <img src="RPS_emojis/rock-emoji.png" class="rps-images" alt="Rock">
+        </button>
+
+        <button title="Paper" onclick="handleChoice('paper')">
+            <img src="RPS_emojis/paper-emoji.png" class="rps-images" alt="Paper">
+        </button>
+
+        <button title="Scissors" onclick="handleChoice('scissors')">
+            <img src="RPS_emojis/scissors-emoji.png" class="rps-images" alt="Scissors">
+        </button>
+    </div>
 </body>
+<script>
+    
+</script>
 </html>
