@@ -16,13 +16,18 @@
         </ul>
     </nav>
 
-    <img class="logo" src="RPS_photos/rps_logo.png" alt="Rock Paper Scissors!">
+    <!-- <img class="logo" src="RPS_photos/rps_logo.png" alt="Rock Paper Scissors!"> -->
     
     <!-- Scoreboard -->
-    <p class="js-scoreboard">Player 1: 0 | Player 2: 0</p>
-    <p class="js-game-status">Player 1, make your choice!</p>
-    <p class="js-gameinfo"></p>
-    
+    <div class="scoreboard-container">
+        <p class="js-scoreboard-text">SCOREBOARD:</p>
+        <p class="js-scoreboard"></p>
+    </div>
+    <!-- Status board-->
+    <div class="updates-container">
+        <p class="js-game-status"></p>
+        <p class="js-gameinfo"></p>
+    </div>
     <!-- Game buttons -->
     <div class="rps-container">
         <button title="Rock" onclick="handleChoice('rock')">
@@ -40,21 +45,8 @@
     <div class="reset-button-container">
         <button class="reset-button">Reset</button>
     </div>
-    <script>  
-        let player1Name = prompt("Enter name for Player 1:", "Player 1");
-        let player2Name = prompt("Enter name for Player 2:", "Player 2");
-        function playerIsNull(player1Name,player2Name) {
-            if (player1Name === null || player1Name.trim() === "") {
-                player1Name = "Player 1";
-            }
-            if (player2Name === null || player2Name.trim() === "") {
-                player2Name = "Player 2";
-            }
-        }
-        playerIsNull(player1Name, player2Name);
 
-    </script>
-    <script src='main.js'></script>
+    <script src='vsFriend.js'></script>
 
     <footer class="main-footer">
         <p>© Singidunum University. All rights reserved.</p>

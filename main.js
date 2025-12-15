@@ -166,9 +166,8 @@ function startAutoPlay() {
     console.log('Auto play started.');
 
     document.getElementById('autoplay_button_container').innerHTML = `
-    <button title='Stop Auto Play' onclick='stopAutoPlay();' class='js-stop-auto-play' id="blue-neon">
-        Stop Auto Play
-    </button>
+    <button title='Reset Score' onclick='resetScoreBoard(scoreBoard)' class='js-reset' id="blue-neon">Reset Score</button>
+    <button title='Stop Auto Play' onclick='stopAutoPlay();' class='js-stop-auto-play' id="blue-neon">Stop Auto Play</button>
     `;
 }
 
@@ -178,75 +177,12 @@ function stopAutoPlay() {
     console.log('Auto play stopped.');
 
     document.getElementById('autoplay_button_container').innerHTML = `
-    <button title="Auto Play" onclick="
-    startAutoPlay();
-    " class="js-autoplay" id="blue-neon" >Auto Play</button>
+    <button title="Reset Score" onclick="resetScoreBoard(scoreBoard)" class="js-reset" id="blue-neon">Reset Score</button>
+    <button title="Auto Play" onclick="startAutoPlay();" class="js-autoplay" id="blue-neon">Auto Play</button>
     `;
 }
 
-// Funkcije za vsFriend.html
 
-let player1Score = 0;
-let player2Score = 0;
-let currentPlayer = 1;
-let player1Choice = null;
-
-function handleChoice(choice) {
-
-    const gameStatus = document.querySelector('.js-game-status');
-    const gameInfo = document.querySelector('.js-gameinfo');
-    const scoreboard = document.querySelector('.js-scoreboard');
-
-    if (currentPlayer === 1) {
-        player1Choice = choice;
-        gameStatus.textContent = `${player2Name}, your turn!`;
-        currentPlayer = 2;
-    } else {
-        const player2Choice = choice;
-        gameStatus.textContent = ``;
-        
-        // Determine winner
-        const winner = determineWinner(player1Choice, player2Choice);
-        
-        if (winner === 1) {
-            player1Score++;
-            gameInfo.textContent = `${player1Name} wins! ${player1Choice} beats ${player2Choice}!`;
-        } else if (winner === 2) {
-            player2Score++;
-            gameInfo.textContent = `${player2Name} wins! ${player2Choice} beats ${player1Choice}!`;
-        } else {
-            gameInfo.textContent = `It's a tie! Both chose ${player1Choice}`;
-        }
-        
-        // Update scoreboard
-        scoreboard.textContent = `${player1Name}: ${player1Score} | ${player2Name}: ${player2Score}`;
-        
-        // Reset for next round
-        setTimeout(() => {
-            gameStatus.textContent = `${player1Name}, make your choice!`;
-            gameInfo.textContent = '';
-            currentPlayer = 1;
-            player1Choice = null;
-        }, 2000);
-    }
-}
-
-function determineWinner(choice1, choice2) {
-    if (choice1 === choice2) return 0; // Tie
-    
-    if (
-        (choice1 === 'rock' && choice2 === 'scissors') ||
-        (choice1 === 'paper' && choice2 === 'rock') ||
-        (choice1 === 'scissors' && choice2 === 'paper')
-    ) {
-        return 1; // Player 1 wins
-    }
-    
-    return 2; // Player 2 wins
-}
-
-// Initialize
-// document.querySelector('.js-game-status').textContent = 'Player 1, make your choice!';
 
 
 
