@@ -37,69 +37,27 @@
             <img src="RPS_emojis/scissors-emoji.png" class="rps-images" alt="Scissors">
         </button>
     </div>
-
-    <script>
-        let player1Score = 0;
-        let player2Score = 0;
-        let currentPlayer = 1;
-        let player1Choice = null;
-
-        function handleChoice(choice) {
-
-            const gameStatus = document.querySelector('.js-game-status');
-            const gameInfo = document.querySelector('.js-gameinfo');
-            const scoreboard = document.querySelector('.js-scoreboard');
-
-            if (currentPlayer === 1) {
-                player1Choice = choice;
-                gameStatus.textContent = `Player 2, your turn!`;
-                currentPlayer = 2;
-            } else {
-                const player2Choice = choice;
-                gameStatus.textContent = ``;
-                
-                // Determine winner
-                const winner = determineWinner(player1Choice, player2Choice);
-                
-                if (winner === 1) {
-                    player1Score++;
-                    gameInfo.textContent = `Player 1 wins! ${player1Choice} beats ${player2Choice}`;
-                } else if (winner === 2) {
-                    player2Score++;
-                    gameInfo.textContent = `Player 2 wins! ${player2Choice} beats ${player1Choice}`;
-                } else {
-                    gameInfo.textContent = `It's a tie! Both chose ${player1Choice}`;
-                }
-                
-                // Update scoreboard
-                scoreboard.textContent = `Player 1: ${player1Score} | Player 2: ${player2Score}`;
-                
-                // Reset for next round
-                setTimeout(() => {
-                    gameStatus.textContent = 'Player 1, make your choice!';
-                    gameInfo.textContent = '';
-                    currentPlayer = 1;
-                    player1Choice = null;
-                }, 2000);
+    <div class="reset-button-container">
+        <button class="reset-button">Reset</button>
+    </div>
+    <script>  
+        let player1Name = prompt("Enter name for Player 1:", "Player 1");
+        let player2Name = prompt("Enter name for Player 2:", "Player 2");
+        function playerIsNull(player1Name,player2Name) {
+            if (player1Name === null || player1Name.trim() === "") {
+                player1Name = "Player 1";
+            }
+            if (player2Name === null || player2Name.trim() === "") {
+                player2Name = "Player 2";
             }
         }
+        playerIsNull(player1Name, player2Name);
 
-        function determineWinner(choice1, choice2) {
-            if (choice1 === choice2) return 0; // Tie
-            
-            if (
-                (choice1 === 'rock' && choice2 === 'scissors') ||
-                (choice1 === 'paper' && choice2 === 'rock') ||
-                (choice1 === 'scissors' && choice2 === 'paper')
-            ) {
-                return 1; // Player 1 wins
-            }
-            
-            return 2; // Player 2 wins
-        }
-
-        // Initialize
-        // document.querySelector('.js-game-status').textContent = 'Player 1, make your choice!';
     </script>
+    <script src='main.js'></script>
+
+    <footer class="main-footer">
+        <p>© Singidunum University. All rights reserved.</p>
+    </footer>
 </body>
 </html>

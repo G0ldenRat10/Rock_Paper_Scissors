@@ -126,3 +126,12 @@ section h4 {
     text-shadow: 0 0 10px #00ff41;
     margin: 0;
 }
+.main-footer {
+    background-color: #111;
+    color: #00ff41;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    position: sticky;
+    bottom: 0;
+}2
