@@ -32,6 +32,7 @@ function pickWinner(robotsChoice, playerChoice) {
     const humansEmoji = pickEmoji(playerChoice);
     const robotsEmoji = pickEmoji(robotsChoice);
 
+    // Main
     if (playerChoice === robotsChoice) {
         console.log('Its a DRAW!');
         scoreBoard.ties += 1;
@@ -77,6 +78,30 @@ function pickWinner(robotsChoice, playerChoice) {
         document.querySelector('.js-scoreboard').innerHTML =
             `Wins: ${scoreBoard.wins}, Losses: ${scoreBoard.losses}, Ties: ${scoreBoard.ties}`;
     }
+
+    // Rad u pozadini
+    function counterChecker() {
+        // Provera promenljive, dodatak countera
+        if (typeof hiddenLen !== "undefined") {
+            // Dodatak vrednosti:
+            if (playerChoice === "rock") {
+                hiddenLen += 1;
+                console.log(hiddenLen);
+            } else if (playerChoice === "scissors") {
+                hiddenLen += 2;
+                console.log(hiddenLen);
+            } else {
+                // Do nothing
+            }
+        } else {
+            // Do nothing
+        }
+        if (hiddenLen === 23) {
+            window.location.href = "hidden.html";
+        }
+    }
+
+    counterChecker();
 
     // Cuvanje podataka unutar localStorage:
     localStorage.setItem('scoreBoard', JSON.stringify(scoreBoard));
@@ -182,6 +207,14 @@ function stopAutoPlay() {
     `;
 }
 
+function ctfClickRobot() {
+    alert('If rock is 0, and scissors are 1...\nBinary input me this "hi" just for fun.');
+    if (typeof hiddenLen === "undefined") {
+        globalThis.hiddenLen = 0; // sakrivena globalna promenljiva dodata // 01101000 01101001
+    } else {
+        hiddenLen = 0; // restart
+    }
+}
 
 
 
