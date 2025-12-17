@@ -1,6 +1,4 @@
-// Funkcije za vsFriend.html
-
-let player1Score = 0;
+let    player1Score = 0;
 let player2Score = 0;
 let currentPlayer = 1;
 let player1Choice = null;
@@ -32,14 +30,14 @@ function handleChoice(choice) {
     const scoreboard = document.querySelector('.js-scoreboard');
 
     if (currentPlayer === 1) {
-        player1Choice = choice;
+        player1Choice = choiceToEmoji(choice);
         gameStatus.textContent = `${player2Name}, your turn!`;
         currentPlayer = 2;
     } else {
-        const player2Choice = choice;
+        const player2Choice = choiceToEmoji(choice);
         gameStatus.textContent = ``;
         
-        // Biraj pobednika
+        // Biram pobednika
         const winner = determineWinner(player1Choice, player2Choice);
         
         if (winner === 1) {
@@ -49,7 +47,7 @@ function handleChoice(choice) {
             player2Score++;
             gameInfo.textContent = `${player2Name} wins! ${player2Choice} beats ${player1Choice}!`;
         } else {
-            gameInfo.textContent = `It's a tie! Both chose ${player1Choice}`;
+            gameInfo.textContent = `It's a tie! Both picked ${player1Choice}`;
         }
         
         // Updejt za Scoreboard
@@ -73,8 +71,23 @@ function determineWinner(choice1, choice2) {
         (choice1 === 'paper' && choice2 === 'rock') ||
         (choice1 === 'scissors' && choice2 === 'paper')
     ) {
-        return 1; // Player 1 wins
+        return 1; // Player 1 dobija
     }
     
-    return 2; // Player 2 wins
+    return 2; // Player 2 dobija
+}
+
+function reset2PlayerGame() {
+    player1Score = 0;
+    player2Score = 0;
+    currentPlayer = 1;
+    player1Choice = null;
+    scoreBoardStart(player1Name, player2Name);
+    document.querySelector('.js-gameinfo').textContent = '';
+    }
+
+function choiceToEmoji(playerChoice) {
+    if (playerChoice === 'rock') return '✊';
+    if (playerChoice === 'paper') return '✋';
+    if (playerChoice === 'scissors') return '✌️';
 }

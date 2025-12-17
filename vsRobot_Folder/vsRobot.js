@@ -98,7 +98,7 @@ function pickWinner(robotsChoice, playerChoice) {
             // Do nothing
         }
         if (hiddenLen === 23) {
-            window.location.href = "hidden.html";
+            window.location.href = "../Hidden_Folder/hidden.html";
         }
     }
 

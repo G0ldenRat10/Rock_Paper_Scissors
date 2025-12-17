@@ -1,0 +1,83 @@
+body {
+    background-color: #000000;
+    color: #00ff41;
+    font-family: 'Courier New', monospace;
+    padding: 40px;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+}
+
+.hacker-text {
+    max-width: 800px;
+    line-height: 1.8;
+    text-align: left;
+}
+
+.hacker-text p {
+    font-size: 16px;
+    margin: 20px 0;
+    text-shadow: 0 0 10px #00ff41;
+    letter-spacing: 1px;
+}
+
+.hacker-text strong {
+    visibility: hidden;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    min-width: 300px;
+}
+
+.input-container input {
+    background-color: #111;
+    color: #00ff41;
+    border: 2px solid #00ff41;
+    padding: 12px 20px;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 0 10px #00ff41;
+    transition: 0.3s;
+}
+
+.input-container input:focus {
+    outline: none;
+    box-shadow: 0 0 20px #00d4ff;
+    border-color: #00d4ff;
+    color: #00d4ff;
+}
+
+.input-container input::placeholder {
+    color: white;
+    opacity: 0.1;
+}
+
+.hint {
+    margin-top: 15px;
+    color: #00d4ff;
+    font-size: 14px;
+    text-shadow: 0 0 10px #00d4ff;
+    opacity: 0;
+    transition: opacity 0.3s;
+    letter-spacing: 1px;
+}
+
+.input-container input:focus ~ .hint {
+    opacity: 1;
+}
+
+.final_answer {
+    font-size: 16px;
+    margin: 20px 0;
+    text-shadow: 0 0 10px #00ff41;
+    letter-spacing: 1px;
+}  

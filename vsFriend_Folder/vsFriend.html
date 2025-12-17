@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
     <title>Rock Paper Scissors</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- <link rel="icon" type="image/png" href="RPS_photos/rps_logo.png"> -->
+    <link rel="stylesheet" href="../Style/style.css">
+    <link rel="icon" type="image/png" href="../RPS_photos/rps_logo.png">
 </head>
 <body>
     <nav class="main-menu">
-        <button class="home-page-button" onclick="window.location.href='main.html'">
-            <img src="RPS_photos/rps_logo.png" class="nav-logo" alt="Logo">
+        <button class="home-page-button" onclick="window.location.href='../Main_Folder/main.html'">
+            <img src="../RPS_photos/rps_logo.png" class="nav-logo" alt="Logo">
         </button>
         <ul>
             <li><a href="vsFriend.html">Play against a friend!</a></li>
-            <li><a href="vsRobot.html">Play against Mr Robot!</a></li>
+            <li><a href="../vsRobot_Folder/vsRobot.html">Play against Mr Robot!</a></li>
         </ul>
     </nav>
 
@@ -31,19 +31,19 @@
     <!-- Game buttons -->
     <div class="rps-container">
         <button title="Rock" onclick="handleChoice('rock')">
-            <img src="RPS_emojis/rock-emoji.png" class="rps-images" alt="Rock">
+            <img src="../RPS_emojis/rock-emoji.png" class="rps-images" alt="Rock">
         </button>
 
         <button title="Paper" onclick="handleChoice('paper')">
-            <img src="RPS_emojis/paper-emoji.png" class="rps-images" alt="Paper">
+            <img src="../RPS_emojis/paper-emoji.png" class="rps-images" alt="Paper">
         </button>
 
         <button title="Scissors" onclick="handleChoice('scissors')">
-            <img src="RPS_emojis/scissors-emoji.png" class="rps-images" alt="Scissors">
+            <img src="../RPS_emojis/scissors-emoji.png" class="rps-images" alt="Scissors">
         </button>
     </div>
     <div class="reset-button-container">
-        <button class="reset-button" id="blue-neon">Reset</button>
+        <button class="reset-button" id="blue-neon" onclick="reset2PlayerGame()">Reset</button>
     </div>
 
     <script src='vsFriend.js'></script>

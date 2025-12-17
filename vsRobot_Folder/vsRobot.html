@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Rock Paper Scissors!</title>
+        <link rel="stylesheet" href="../Style/style.css">
+        <link rel="icon" type="image/png" href="../RPS_photos/rps_logo.png">
+    </head>
+    <body>
+        <nav class="main-menu">
+            <button class="home-page-button" onclick="window.location.href='../Main_Folder/main.html'">
+                <img src="../RPS_photos/rps_logo.png" class="nav-logo" alt="Logo">
+            </button>
+            <ul>
+                <li><a href="../vsFriend_Folder/vsFriend.html">Play against a friend!</a></li>
+                <li><a href="vsRobot.html">Play against Mr Robot!</a></li>
+            </ul>
+        </nav>
+        <img class="logo" src="../RPS_photos/mrrobot_rps.jpg" alt="Rock Paper Scissors!" onclick="ctfClickRobot()"></img>
+        <div class="rps-container">
+            <button title="Rock" onclick="const playerChoice = 'rock'; const robotsChoice = pickComputerMove(); pickWinner(robotsChoice, playerChoice);"><img src="../RPS_emojis/rock-emoji.png" class="rps-images"></button>
+            <button title="Paper" onclick="const playerChoice = 'paper'; const robotsChoice = pickComputerMove(); pickWinner(robotsChoice, playerChoice);"><img src="../RPS_emojis/paper-emoji.png" class="rps-images"></button>
+            <button title="Scissors" onclick="const playerChoice = 'scissors'; const robotsChoice = pickComputerMove(); pickWinner(robotsChoice, playerChoice);"><img src="../RPS_emojis/scissors-emoji.png" class="rps-images"></button>
+        </div>
+        <div class="scoreboard-container">
+            <p class="js-scoreboard-text">SCOREBOARD:</p>
+            <p class="js-scoreboard"></p>
+        </div>
+        <p class="js-game-status"></p>
+        <p class="js-gameinfo"></p>
+
+        <div id="autoplay_button_container" class="buttons-container">
+            <button title="Reset Score" onclick="resetScoreBoard(scoreBoard)" class="js-reset" id="blue-neon">Reset Score</button>
+            <button title="Auto Play" onclick="startAutoPlay();" class="js-autoplay" id="blue-neon">Auto Play</button>
+        </div>
+
+        <script src="vsRobot.js"></script>
+        <script>
+            let player1Name = 'Player 1';
+            let player2Name = 'Player 2';
+        </script>
+
+        <footer class="main-footer">
+            <p>© Singidunum University. All rights reserved.</p>
+        </footer>
+    </body>
+</html>
