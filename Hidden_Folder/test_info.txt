@@ -1,6 +1,5 @@
 Decryption input in SHA-256:
+e564b4081d7a9ea4b00dada53bdae70c99b87b6fce869f0c3dd4d2bfa1e53e1c
 
-b37e50cedcd3e3f1ff64f4afc0422084ae694253cf399326868e07a35f4a45fb
-
-Resultet text:
+Result in clear-text:
 hidden

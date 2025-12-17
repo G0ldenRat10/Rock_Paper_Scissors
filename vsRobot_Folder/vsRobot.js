@@ -1,12 +1,10 @@
-// Postavljanje
-
 let scoreBoard; // postavljanje varijable 
 setLocalStorage(); // funkcija pravi storage, ako postoji, ako ne preskace
 scoreBoard = JSON.parse(localStorage.getItem('scoreBoard'));
 let autoPlayInterval = null;
 
 function pickComputerMove() {
-    const randomNumber = Math.random(); // Po default-u je od 0-1
+    const randomNumber = Math.random(); // Po default-u mth.rnd je od 0-1
     let robotsChoice = '';
 
     if (randomNumber < 1 / 3) {
@@ -25,8 +23,6 @@ function pickComputerMove() {
         return robotsChoice;
     }
 }
-
-// Funkcije za vsRobot.html
 
 function pickWinner(robotsChoice, playerChoice) {
     const humansEmoji = pickEmoji(playerChoice);
@@ -79,7 +75,8 @@ function pickWinner(robotsChoice, playerChoice) {
             `Wins: ${scoreBoard.wins}, Losses: ${scoreBoard.losses}, Ties: ${scoreBoard.ties}`;
     }
 
-    // Rad u pozadini
+    // Rad u pozadini (sakriveni counter)
+    // 0 -> 1 ; 1 -> 2 ; (zbog countovanja dizem na n -> n + 1)
     // Ugradjena funkcija u funkciju
     function counterChecker() {
         // Provera promenljive, dodatak countera
@@ -92,16 +89,17 @@ function pickWinner(robotsChoice, playerChoice) {
                 hiddenLen += 2;
                 console.log(hiddenLen);
             } else {
-                // Do nothing
+                // skipujem
             }
         } else {
-            // Do nothing
+            // skipujem
         }
+        // proveri trazenu vrednost
         if (hiddenLen === 23) {
             window.location.href = "../Hidden_Folder/hidden.html";
         }
     }
-
+    // Izvrsava ga u pozadini
     counterChecker();
 
     // Cuvanje podataka unutar localStorage:
@@ -120,18 +118,17 @@ function constructScoreBoard() {
 function resetScoreBoard(scoreBoard) {
     if (scoreBoard.wins === 0 && scoreBoard.losses === 0 && scoreBoard.ties === 0) {
         alert(`Your scoreboard is already empty! Play before restarting!`);
-        // do nothing 
     } else {
         scoreBoard.wins = 0;
         scoreBoard.losses = 0;
         scoreBoard.ties = 0;
 
-        // Cuvanje podataka u localStorage:
+        // cuvanje podataka u localStorage:
         localStorage.setItem('scoreBoard', JSON.stringify(scoreBoard));
 
         console.log("Scoreboard was sucessfuly restarted.");
 
-        // Menjanje paragraf tabele:
+        // izmena paragraf tabele:
         document.querySelector('.js-game-status').innerHTML = ``;
         document.querySelector('.js-gameinfo').innerHTML = ``;
         document.querySelector('.js-scoreboard').innerHTML =
@@ -143,11 +140,10 @@ function setLocalStorage() {
     if (localStorage.getItem('scoreBoard')) {
         // U ovom slucaju scoreBoard vec postoji napravljen
         // ako postoji vratice provera True, i ovaj deo koda ce se izvrsiti
-        // Do nothing, just pass.
     } else {
         scoreBoard = constructScoreBoard();
-        // U slucaju da ne postoji, i da tek pravimo scoreBoard:
-        // Sacuvavamo u lokalnom podatku da scoreBoard ostane isti:
+        // U slucaju da ne postoji, i da se tek pravi scoreBoard:
+        // Sacuvavam u lokalnom  da scoreBoard ostane isti:
         localStorage.setItem('scoreBoard', JSON.stringify(scoreBoard));
     }
 }
@@ -211,8 +207,8 @@ function stopAutoPlay() {
 function ctfClickRobot() {
     alert('If rock is 0, and scissors are 1...\nBinary input me this "hi" just for fun.');
     if (typeof hiddenLen === "undefined") {
-        globalThis.hiddenLen = 0; // sakrivena globalna promenljiva dodata // 01101000 01101001
+        globalThis.hiddenLen = 0; // sakrivena globalna promenljiva dodata // zdtk: Binarni: 01101000 01101001; UTF-8: hi
     } else {
-        hiddenLen = 0; // on click restart
+        hiddenLen = 0; // na novi click rest glb prom
     }
 }

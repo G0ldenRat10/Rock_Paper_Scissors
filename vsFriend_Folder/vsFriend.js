@@ -64,17 +64,17 @@ function handleChoice(choice) {
 }
 
 function determineWinner(choice1, choice2) {
-    if (choice1 === choice2) return 0; // Tie
+    if (choice1 === choice2) return 0; 
     
     if (
         (choice1 === 'rock' && choice2 === 'scissors') ||
         (choice1 === 'paper' && choice2 === 'rock') ||
         (choice1 === 'scissors' && choice2 === 'paper')
     ) {
-        return 1; // Player 1 dobija
+        return 1; 
     }
     
-    return 2; // Player 2 dobija
+    return 2; 
 }
 
 function reset2PlayerGame() {
